@@ -15,6 +15,13 @@ const copyEVENT = async () => {
   }
 };
 
+const q2= async () => {
+  try {
+    await navigator.clipboard.writeText(Q2);
+  } catch (error) {
+    console.error("Failed to copy to clipboard:", error);
+  }
+};
 
 const q3= async () => {
   try {
@@ -126,6 +133,32 @@ const q18 = async () => {
     console.error("Failed to copy to clipboard:", error);
   }
 };
+
+const Q2=`
+
+ private lateinit var etUsername: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var btn:Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        etUsername=findViewById(R.id.username)
+        etPassword=findViewById(R.id.password)
+        btn= findViewById(R.id.btn)
+
+        btn.setOnClickListener{
+            if (etUsername.text.toString()=="admin" && etPassword.text.toString()=="admin")
+                Toast.makeText(applicationContext,"Login Success",Toast.LENGTH_LONG).show()
+            else
+                Toast.makeText(applicationContext,"Login Failed",Toast.LENGTH_LONG).show()
+        }
+
+    }
+
+`;
 
 
 const Q18 = `
